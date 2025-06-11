@@ -4,16 +4,16 @@
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🔍 Bulk **IP reputation lookup** across trusted platforms:
+-  Bulk **IP reputation lookup** across trusted platforms:
     - [VirusTotal](https://virustotal.com/)
     - [AbuseIPDB](https://abuseipdb.com/)
     - [Whois (ARIN RDAP)](https://rdap.arin.net/)
-- 🧠 **AI Risk Summary**: Local LLM (LLaMA 3.2 via Ollama) evaluates and summarizes the threat context and assigns a risk level (Low, Medium, High).
-- ⚖️ **Cross-validation**: Detects conflicts like "clean on VirusTotal but flagged on AbuseIPDB".
-- 🧠 Insight into **"clean" IPs** that may be abused for malicious purposes (e.g., residential proxies).
-- 🖥️ **Streamlit-based GUI** — no terminal needed.
+-  **AI Risk Summary**: Local LLM (LLaMA 3.2 via Ollama) evaluates and summarizes the threat context and assigns a risk level (Low, Medium, High).
+-  **Cross-validation**: Detects conflicts like "clean on VirusTotal but flagged on AbuseIPDB".
+-  Insight into **"clean" IPs** that may be abused for malicious purposes (e.g., residential proxies).
+-  **Streamlit-based GUI** — no terminal needed.
 
 ---
 
@@ -28,7 +28,7 @@
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 1. **Clone the Repository**
 
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🧠 LLaMA 3 + Ollama Setup (Local AI)
+##  LLaMA 3 + Ollama Setup (Local AI)
 
 1. **Install Ollama**
     - https://ollama.com/download
@@ -67,7 +67,7 @@ Ensure the server runs at `http://localhost:11434`.
 
 ---
 
-## 🖥️ Streamlit Web UI
+##  Streamlit Web UI
 
 The UI is built with [Streamlit](https://streamlit.io/), offering:
 
