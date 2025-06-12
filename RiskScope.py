@@ -10,12 +10,11 @@ st.set_page_config(page_title="RiskScope - IP Threat Checker with Ollama AI", la
 VIRUSTOTAL_API_KEY = "VT_API"
 ABUSEIPDB_API_KEY = "ABIPDB_API"
 
-# === Ollama config ===
+# Ollama config
 OLLAMA_API_URL = "http://localhost:11434/api/chat"
 OLLAMA_MODEL_NAME = "llama3.2" 
 
-
-# -------------------- VirusTotal --------------------
+#Data Fetch Functions
 def get_virustotal_data(ip):
     url = f"https://www.virustotal.com/api/v3/ip_addresses/{ip}"
     headers = {"x-apikey": VIRUSTOTAL_API_KEY}
@@ -35,7 +34,6 @@ def get_virustotal_data(ip):
     return {"Error": f"VirusTotal error {response.status_code}"}
 
 
-# -------------------- AbuseIPDB --------------------
 def get_abuseipdb_data(ip):
     url = "https://api.abuseipdb.com/api/v2/check"
     headers = {"Key": ABUSEIPDB_API_KEY, "Accept": "application/json"}
@@ -53,7 +51,6 @@ def get_abuseipdb_data(ip):
     return {"Error": f"AbuseIPDB error {response.status_code}"}
 
 
-# -------------------- Who.is --------------------
 def get_whois_data(ip):
     try:
         response = requests.get(f"https://rdap.arin.net/registry/ip/{ip}")
@@ -71,7 +68,7 @@ def get_whois_data(ip):
         return {"Error": f"Whois error: {e}"}
     return {"Error": f"Whois error {response.status_code}"}
 
-
+#AI Function
 def generate_ai_summary(ip, vt_data, abuse_data, whois_data):
     prompt = f"""
 You are a cybersecurity analyst. Given the threat intelligence for IP address {ip}, generate a concise professional summary of its potential risk level.
@@ -121,7 +118,7 @@ Summarize the threat context and assign a final risk level (Low, Medium, High). 
         return f"Ollama connection error: {e}"
 
 
-# -------------------- Streamlit UI --------------------
+# StreamLit UI
 st.title("🛡️ RiskScope - IP Threat Intelligence Checker")
 st.write("Enter one or more IP addresses (comma-separated) to assess potential threats using VirusTotal, AbuseIPDB, Whois, and AI-powered risk summarization using Ollama (LLaMA 3).")
 
