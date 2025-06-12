@@ -77,8 +77,6 @@ pip install openai
 1. Add at the top of your script:
 
 ```python
-python
-CopyEdit
 import openai
 
 # OpenAI API Key
@@ -89,8 +87,6 @@ openai.api_key = st.secrets["openai_key"]
 1. AI Summary Function:
 
 ```python
-python
-CopyEdit
 def generate_ai_summary(ip, vt_data, abuse_data, whois_data):
     summary_prompt = <Same as original>
     try:
