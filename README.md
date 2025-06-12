@@ -66,7 +66,48 @@ ollama run llama3
 Ensure the server runs at `http://localhost:11434`.
 
 ---
+## OpenAI Integration(Optional)
 
+1. Install OpenAI
+
+```jsx
+pip install openai
+```
+
+1. Add at the top of your script:
+
+```python
+python
+CopyEdit
+import openai
+
+# OpenAI API Key
+openai.api_key = st.secrets["openai_key"]
+
+```
+
+1. AI Summary Function:
+
+```python
+python
+CopyEdit
+def generate_ai_summary(ip, vt_data, abuse_data, whois_data):
+    summary_prompt = <Same as original>
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": "You are a cybersecurity analyst generating risk summaries based on threat intel reports."},
+                {"role": "user", "content": summary_prompt}
+            ],
+            temperature=0.4,
+            max_tokens=250
+        )
+        return response.choices[0].message['content'].strip()
+    except Exception as e:
+        return f"AI summary error: {e}"
+```
+---
 ##  Streamlit Web UI
 
 The UI is built with [Streamlit](https://streamlit.io/), offering:
