@@ -1,4 +1,4 @@
-# 🛡️ RiskScope: AI-Powered IP Threat Intelligence Platform
+# 🤖 RiskScope: AI-Powered IP Threat Intelligence Platform
 
 **RiskScope** is a streamlined, AI-assisted threat intelligence tool designed for SOC analysts, threat hunters, and cybersecurity professionals. It aggregates **IP address** reputation data from multiple open-source threat intel APIs (VirusTotal, AbuseIPDB, Whois, etc.) and generates actionable, concise risk summaries using a locally running LLaMA 3 model via [Ollama](https://ollama.com/). Built with **Streamlit**, the tool offers an intuitive web interface for quick, multi-IP analysis.
 
