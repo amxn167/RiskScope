@@ -133,5 +133,7 @@ python3 -m streamlit run RiskScope.py
 
 ## Screenshots/Working:
 ![image.png](https://github.com/amxn167/RiskScope/blob/main/Screenshots/Base.png)
+---
 ![image.png](https://github.com/amxn167/RiskScope/blob/main/Screenshots/Clean.png)
+---
 ![image.png](https://github.com/amxn167/RiskScope/blob/main/Screenshots/Malicious.png)
